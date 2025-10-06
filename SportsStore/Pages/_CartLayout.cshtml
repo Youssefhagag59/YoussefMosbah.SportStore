@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SportsStore</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white py-2 shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="/" class="navbar-brand mb-0 fs-3 fw-bold text-white ml-2">SPORTS STORE</a>
+            <div>
+                <!-- Add you want here  -->
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        @RenderBody()
+    </main>
+
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SportsStore</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="bg-dark text-white py-2 shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="/" class="navbar-brand mb-0 fs-3 fw-bold text-white">SPORTS STORE</a>
+            <div>
+                <vc:cart-summary />
+            </div>
+        </div>
+    </header> 
+
+    <main class="container-fluid mt-3">
+        <div class="row gx-3">
+            <nav id="categories" class="col-12 col-md-3 mb-3 mb-md-0">
+                <vc:navigation-menu />
+            </nav>
+            <section class="col-12 col-md-9">
+                @RenderBody()
+            </section>
+        </div>
+    </main>
+
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

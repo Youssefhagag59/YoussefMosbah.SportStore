@@ -1,0 +1,15 @@
+﻿@page
+
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 bg-light text-center px-3">
+    <div class="card shadow p-4" style="max-width: 420px; width: 100%;">
+        <h2 class="mb-3 text-primary">Thank You!</h2>
+        <p class="lead mb-4">Thanks for placing order <strong>#@OrderId</strong></p>
+        <p class="mb-4">We'll ship your goods as soon as possible.</p>
+        <a class="btn btn-primary btn-lg w-100" asp-controller="Home">Return to Store</a>
+    </div>
+</div>
+
+@functions {
+    [BindProperty(SupportsGet = true)]
+    public string? OrderId { get; set; }
+}

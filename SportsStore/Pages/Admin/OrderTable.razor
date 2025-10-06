@@ -1,0 +1,58 @@
+﻿<table class="table table-striped table-bordered text-center align-middle">
+    <thead class="bg-primary text-white fs-5">
+        <tr>
+            <th colspan="5" class="py-3">@TableTitle</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Zip</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Orders != null && Orders.Any())
+        {
+            @foreach (var order in Orders)
+            {
+                @foreach (var line in order.CartLines)
+                {
+                    <tr>
+                        <td>@order.Name</td>
+                        <td>@order.Zip</td>
+                        <td>@line.Product.Name</td>
+                        <td>@line.Quantity</td>
+                        <td>
+                            <button class="btn btn-sm @(ButtonLabel == "Ship" ? "btn-success":"btn-danger")"
+                                    @onclick="() => OrderSelected.InvokeAsync(order.OrderID)">
+                                @ButtonLabel
+                            </button>
+                        </td>   
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center fst-italic text-muted">No Orders</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    [Parameter]
+    public string TableTitle { get; set; } = "Orders";
+
+    [Parameter]
+    public IEnumerable<Order> Orders { get; set; } = Enumerable.Empty<Order>();
+
+    [Parameter]
+    public string ButtonLabel { get; set; } = "Ship";
+
+    [Parameter]
+    public EventCallback<int> OrderSelected { get; set; }
+}

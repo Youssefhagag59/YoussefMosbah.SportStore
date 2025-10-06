@@ -1,0 +1,34 @@
+﻿ @inherits LayoutComponentBase
+<nav class="navbar navbar-dark bg-gradient px-3 ">
+	<a class="navbar-brand d-flex align-items-center" href="/admin">
+		<img src="/lib/Images/Sports store logo.png" width="60" height="45" class="me-2" alt="Logo">
+		<span class="fw-bold text-black">SPORTS STORE ADMINISTRATION</span>
+	</a>
+
+	<a class="btn btn-sm btn-primary" href="/account/logout">Log Out</a>
+
+</nav>
+
+<div class="container-fluid"> 
+	<div class="row p-2">
+		<div class="col-3">
+			<div class="d-grid gap-1">
+				<NavLink class="btn btn-outline-primary"
+						 href="/admin/products"
+						 ActiveClass="btn-primary text-white"
+						 Match="NavLinkMatch.Prefix">
+					Products
+				</NavLink>
+				<NavLink class="btn btn-outline-primary"
+						 href="/admin/orders"
+						 ActiveClass="btn-primary text-white"
+						 Match="NavLinkMatch.Prefix">
+					Orders
+				</NavLink>
+			</div>
+		</div>
+		<div class="col">
+			@Body
+		</div>
+	</div>
+</div>

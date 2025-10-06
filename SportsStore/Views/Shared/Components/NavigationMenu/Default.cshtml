@@ -1,0 +1,17 @@
+﻿@model IEnumerable<string>
+
+<div class="d-flex flex-wrap gap-2">
+    <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Home" asp-route-category="">
+        Home
+    </a>
+
+    @foreach (var category in Model ?? Enumerable.Empty<string>())
+    {
+        var isSelected = category == (string)ViewBag.selectedCategory;
+        <a class="btn @(isSelected ? "btn-primary" : "btn-outline-secondary")"
+           asp-action="Index" asp-controller="Home"
+           asp-route-category="@category" asp-route-productPage="1">
+            @category
+        </a>
+    }
+</div>

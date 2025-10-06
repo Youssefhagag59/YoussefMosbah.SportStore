@@ -1,0 +1,14 @@
+﻿@model Cart
+
+<div class="d-flex align-items-center text-white gap-2">
+    @if (Model.Lines.Any())
+    {
+        <small class="mb-0">
+           
+            @Model.Lines.Sum(x => x.Quantity) item(s) - @Model.ComputeTotalValue().ToString("c", new CultureInfo("en-US"))
+        </small>
+    }
+    <a class="btn btn-outline-light btn-sm" asp-page="/Cart" asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()" aria-label="View Cart">
+        <i class="fas fa-cart-shopping"></i>
+    </a>
+</div>
