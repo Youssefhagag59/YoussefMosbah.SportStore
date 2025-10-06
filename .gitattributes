@@ -61,3 +61,11 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+# Exclude frontend/vendor files from GitHub language stats
+*.js linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.min.js linguist-vendored
+*.map linguist-vendored
+*.html linguist-vendored
+
